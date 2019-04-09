@@ -61,6 +61,11 @@ void MX_FREERTOS_Init(void);
 
 /* Private user code ---------------------------------------------------------*/
 /* USER CODE BEGIN 0 */
+PUTCHAR_PROTOTYPE
+{
+	HAL_UART_Transmit( &PRINTF_UART_PORT, (uint8_t *)&ch, 1, 0xFFFF );
+	return ch;
+}
 
 /* USER CODE END 0 */
 
@@ -99,7 +104,8 @@ int main(void)
   MX_USART3_UART_Init();
   MX_USB_OTG_FS_PCD_Init();
   /* USER CODE BEGIN 2 */
-
+	printf( "===> Start Ethernet_Test\r\n" );
+	
   /* USER CODE END 2 */
 
   /* Call init function for freertos objects (in freertos.c) */
