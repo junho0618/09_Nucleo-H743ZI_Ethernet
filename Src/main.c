@@ -108,6 +108,8 @@ int main(void)
   MX_USB_OTG_FS_PCD_Init();
   /* USER CODE BEGIN 2 */
 	printf( "===> Start Ethernet_Test\r\n" );
+	HAL_GPIO_WritePin(LD1_GPIO_Port, LD1_Pin, GPIO_PIN_SET);
+
 	
   /* USER CODE END 2 */
 
